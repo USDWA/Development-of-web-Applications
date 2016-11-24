@@ -12,6 +12,23 @@
         <label for="name">Username: </label><input type="text" name="username">
         <label for="email">E-mail: </label><input type="text" name="username">
         <div align="center">Password: <input type="password" name="pass"></div>
+
+        <select name= "country" required>
+                <option value=""> </option>
+                <option value="US">US </option>
+                <option value="UK">UK</option>
+                <option value="AUS">AUS</option>
+    </fieldset>
+    <br> <!--7:53 in video, fieldset 2-->
+    <fieldset>
+        <legend>Booking Details: </legend>
+        <input type="date" name="date" min="2013-12-02">
+        <input type="number" name="numvberofGuests" min="1" max="6">
+        <p>Do you require meals?</p>
+        <input type="radio" name="meals" value="yesMeals">
+        <input type="radio" name="meals" value="noMeals">
+        <br>
+        <input type ="checkbox" name="balcony" value="yes" checked>
     </fieldset>
         <div align="center"><input type="submit" value="Submit"></div>
 </form>
