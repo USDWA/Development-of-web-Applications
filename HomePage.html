@@ -7,8 +7,9 @@
 
 <form action="checkIn.php" method="GET">
     <fieldset>
-        <legend>Check in</legend>
+        <legend>Personal Details: </legend>
 
+<<<<<<< HEAD
         <label for="name">Username: </label><input type="text" name="username">
         <label for="email">E-mail: </label><input type="text" name="username">
         <div align="center">Password: <input type="password" name="pass"></div>
@@ -29,6 +30,12 @@
         <input type="radio" name="meals" value="noMeals">
         <br>
         <input type ="checkbox" name="balcony" value="yes" checked>
+=======
+        <label for="name">Username: </label><input type="text" name="username" id="name" required placeholder="Your username" pattern="[a-zA-Z]{3,}" title="Please enter in more than three letters">
+        <label for="email">E-mail: </label><input type="text" name="email" id="email" required placeholder="Your Email" pattern="[a-zA-Z]{3,}@[a-zA-Z]{3,}[.]{1}[a-zA-Z]{2,}" title="Please enter in a valid email address">
+        <label for="phone">Phone: <input type="tel" name="phone" id="phone" required placeholder="Please enter in your phone number" pattern="[0-9]{4} [0-9]{3} [0-9]{3}" title="Please enter in a phone number in this format: #### ### ###">
+  
+>>>>>>> origin/master
     </fieldset>
         <div align="center"><input type="submit" value="Submit"></div>
 </form>
