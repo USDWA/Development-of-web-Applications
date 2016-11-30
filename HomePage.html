@@ -2,10 +2,20 @@
 <html>
 <head>
 <title>Grand hotel</title>
+<style>
 
+fieldset{
+    background-color: gray;
+    opacity: 0.9;
+}
+
+legend{
+   color:  white;
+}
+</style>
 
 </head>
-<body>
+<body background="wallpaper.jpg">
 
 <form action="destination.html" method="GET">
     <fieldset>
@@ -21,8 +31,7 @@
         <tr>
         <td><label for="phone">Phone: </label></td><td><input type="tel" name="phone" id="phone" required placeholder="Please enter in your phone number" pattern="[0-9]{4} [0-9]{3} [0-9]{3}" title="Please enter in a phone number in this format: #### ### ###"></td></tr>
         </table>
-        
-    </fieldset>
+
     <br>
     <fieldset>
         <legend>Booking Details: </legend>
@@ -44,7 +53,10 @@
         <br>
         <label for="balcony">Do you require a balcony?</label><input id="balcony" type ="checkbox" name="balcony" value="yes" checked>
         <br>
-        <input type="image" src="button.jpg" alt="Submit" width="80px" height="30px">
+        <input type="image" src="Submit-Button-PNG-Pic.png" alt="Submit" width="80px" height="30px">
+    </fieldset>
+
+            
     </fieldset>
 </form>
 
