@@ -2,35 +2,50 @@
 <html>
 <head>
 <title>Grand hotel</title>
+
+
 </head>
 <body>
 
-<form action="checkIn.php" method="GET">
+<form action="destination.html" method="GET">
     <fieldset>
         <legend>Personal Details: </legend>
 
-        <label for="name">Username: </label><input type="text" name="username" id="name" required placeholder="Your username" pattern="[a-zA-Z]{3,}" title="Please enter in more than three letters">
-        <label for="email">E-mail: </label><input type="text" name="email" id="email" required placeholder="Your Email" pattern="[a-zA-Z]{3,}@[a-zA-Z]{3,}[.]{1}[a-zA-Z]{2,}" title="Please enter in a valid email address">
-        <label for="phone">Phone: <input type="tel" name="phone" id="phone" required placeholder="Please enter in your phone number" pattern="[0-9]{4} [0-9]{3} [0-9]{3}" title="Please enter in a phone number in this format: #### ### ###">
-
-        <select name= "country" required>
-                <option value=""> </option>
-                <option value="US">US </option>
-                <option value="UK">UK</option>
-                <option value="AUS">AUS</option>
+        <table>
+            <tr>
+        <td><label for="name">Name: </label></td><td><input type="text" name="username" id="name" required placeholder="Your username" pattern="[a-zA-Z]{3,}" title="Please enter in more than three letters"></td></tr>
+        <tr>
+        <td><label for="name">ID: </label></td><td><input type="int" name="id" id="id" required placeholder="Your ID" pattern="[0-9]{3} [-]{1} [0-9]{4} [-]{1} [0-9]{7} [-]{1} [0-9]{1}" title="Please enter valid ID"></td></tr>
+        <tr>
+        <td><label for="email">E-mail: </label></td><td><input type="text" name="email" id="email" required placeholder="Your Email" pattern="[a-zA-Z]{3,}@[a-zA-Z]{3,}[.]{1}[a-zA-Z]{2,}" title="Please enter in a valid email address"></td></tr>
+        <tr>
+        <td><label for="phone">Phone: </label></td><td><input type="tel" name="phone" id="phone" required placeholder="Please enter in your phone number" pattern="[0-9]{4} [0-9]{3} [0-9]{3}" title="Please enter in a phone number in this format: #### ### ###"></td></tr>
+        </table>
+        
     </fieldset>
-    <br> <!--7:53 in video, fieldset 2-->
+    <br>
     <fieldset>
         <legend>Booking Details: </legend>
-        <input type="date" name="date" min="2013-12-02">
-        <input type="number" name="numvberofGuests" min="1" max="6">
-        <p>Do you require meals?</p>
-        <input type="radio" name="meals" value="yesMeals">
-        <input type="radio" name="meals" value="noMeals">
-        <br>
-        <input type ="checkbox" name="balcony" value="yes" checked>
-    </fieldset>
 
+        <table>
+            <tr>
+        <td><label for="date">Booking in: </label></td><td><input id="date" type="date" name="date" min="2013-12-02"></td>
+        <td><label for="date">Booking out: </label></td><td><input id="date" type="date" name="date" min="2013-12-02"></td></tr>
+        <tr>
+        <td><label for="rooms">Rooms: &nbsp;&nbsp;</label></td><td><input id="rooms" type="number" name="rooms" min="1" max="30"></td></tr>
+        <tr>
+        <td><label for="adults">Adults: 	&nbsp;&nbsp;&nbsp;</label></td><td><input id="adults" type="number" name="adults" min="1" max="30"></td></tr>
+        <tr>
+        <td><label for="children">Children: </label></td><td><input id="children" type="number" name="children" min="1" max="30"></td></tr>
+        </table>
+        <p>Do you require meals?</p>
+        <label for="yesMeals">Yes: </label><input id="yesMeals" type="radio" name="meals" value="yesMeals">
+        <label for="noMeals">No: </label><input id="noMeals" type="radio" name="meals" value="noMeals">
+        <br>
+        <label for="balcony">Do you require a balcony?</label><input id="balcony" type ="checkbox" name="balcony" value="yes" checked>
+        <br>
+        <input type="image" src="button.jpg" alt="Submit" width="80px" height="30px">
+    </fieldset>
 </form>
 
 </body>
