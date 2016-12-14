@@ -14,17 +14,13 @@
     $row = mysqli_fetch_array($result);
     $guest_id = $row[0] + 1;
 
-    $sql_query = "INSERT INTO guests SET
-                               fNAme = {$fName},
-                               lName = '{$lName}',
-                               ssid = '{$SID}',
-                               email = '{$email}',
-                               phone_no = {$phoneNumber}
-                               guest_no = '{$guest_id}',";
+    $sql_query = "INSERT INTO guests 
+                    SET fName = '{$fName}', lName = '{$lName}', ssid = '{$SID}',
+                     email = '{$email}', phone_no = {$phoneNumber}, guest_no = '{$guest_id}'";
 
-    $result = mysqli_query($connection, $sql_query);
+    $result2 = mysqli_query($connection, $sql_query);
 
-    if(mysqli_num_rows($result))
+    if(mysqli_num_rows($result2) > 0)
         echo "Success...";
 
     else

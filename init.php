@@ -1,6 +1,6 @@
 <?php // Initialize establishing connection_status
 
-    DEFINE('db_name', 'webappdb'); // name of DB
+    DEFINE('db_name', 'hotel'); // name of DB
     DEFINE('mysql_user', 'root'); // user name of admin of DB, our mysql user name is root.
     DEFINE('mysql_pass', ''); // password of admin of DB
     DEFINE('server_name', 'localhost'); // server name
