@@ -14,9 +14,8 @@
     $row = mysqli_fetch_array($result);
     $guest_id = $row[0] + 1;
 
-    $sql_query = "INSERT INTO guests 
-                    SET fName = '{$fName}', lName = '{$lName}', ssid = '{$SID}',
-                     email = '{$email}', phone_no = {$phoneNumber}, guest_no = '{$guest_id}'";
+    $sql_query = "INSERT INTO guests (fName, lName, ssid, email, phone_no, guest_no)
+                  VALUES ('$fName', '$lName', '$SID', '$email', '$phoneNumber', '$guest_id')";
 
     $result2 = mysqli_query($connection, $sql_query);
 
