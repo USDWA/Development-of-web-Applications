@@ -27,7 +27,7 @@ legend{
         <td><label for="name">Last name: </label></td><td><input type="text" name="lName" id="lName" required placeholder="Your Last name" pattern="[a-zA-Z]{3,}" title="Please enter in more than three letters"></td>
         </tr>
         <tr>
-        <td><label for="name">ID: </label></td><td><input type="int" name="sid" id="sid" required placeholder="Your ID" pattern="[0-9]{15}" title="Please enter valid ID"></td></tr>
+        <td><label for="name">ID: </label></td><td><input type="int" name="sid" id="sid" required placeholder="Your ID" pattern="[0-9]{2}" title="Please enter valid ID"></td></tr>
         <tr>
         <td><label for="email">E-mail: </label></td><td><input type="text" name="email" id="email" required placeholder="Your Email" title="Please enter in a valid email address"></td></tr>
         <tr>
@@ -47,7 +47,7 @@ legend{
         <tr>
         <td><label for="adults">Adults: 	&nbsp;&nbsp;&nbsp;</label></td><td><input id="adults" type="number" name="adults" min="1" max="30"></td></tr>
         <tr>
-        <td><label for="children">Children: </label></td><td><input id="children" type="number" name="children" min="1" max="30"></td></tr>
+        <td><label for="children">Children: </label></td><td><input id="children" type="number" name="children" min="0" max="30"></td></tr>
         </table>
         <p>Do you require meals?</p>
         <label for="yesMeals">Yes: </label><input id="yesMeals" type="radio" name="meals" value="yesMeals">

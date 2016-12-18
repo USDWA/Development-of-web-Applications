@@ -17,9 +17,8 @@
     $sql_query = "INSERT INTO guests (fName, lName, ssid, email, phone_no, guest_no)
                   VALUES ('$fName', '$lName', '$SID', '$email', '$phoneNumber', '$guest_id')";
 
-    $result2 = mysqli_query($connection, $sql_query);
 
-    if(mysqli_num_rows($result2) > 0)
+    if(mysqli_query($connection, $sql_query))
         echo "Success...";
 
     else
