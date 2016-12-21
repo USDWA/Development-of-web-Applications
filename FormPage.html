@@ -2,6 +2,9 @@
 <html>
 <head>
 <title>Grand hotel</title>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <style>
 
 fieldset{
@@ -23,44 +26,58 @@ legend{
 
         <table>
         <tr>
-        <td><label for="name">First name: </label></td><td><input type="text" name="fName" id="fName" required placeholder="Your First name" pattern="[a-zA-Z]{3,}" title="Please enter in more than three letters"></td>
-        <td><label for="name">Last name: </label></td><td><input type="text" name="lName" id="lName" required placeholder="Your Last name" pattern="[a-zA-Z]{3,}" title="Please enter in more than three letters"></td>
+        <td><label>First name: </label></td><td><input type="text" name="fName" id="fName" required placeholder="Your First name" pattern="[a-zA-Z]{3,}" title="Please enter in more than three letters"></td>
+        <td><label>Last name: </label></td><td><input type="text" name="lName" id="lName" required placeholder="Your Last name" pattern="[a-zA-Z]{3,}" title="Please enter in more than three letters"></td>
         </tr>
         <tr>
-        <td><label for="name">ID: </label></td><td><input type="int" name="sid" id="sid" required placeholder="Your ID" pattern="[0-9]{2}" title="Please enter valid ID"></td></tr>
+        <td><label>ID: </label></td><td><input type="int" name="sid" id="sid" required placeholder="Your ID" pattern="[0-9]{2}" title="Please enter valid ID"></td></tr>
         <tr>
-        <td><label for="email">E-mail: </label></td><td><input type="text" name="email" id="email" required placeholder="Your Email" title="Please enter in a valid email address"></td></tr>
+        <td><label>E-mail: </label></td><td><input type="text" name="email" id="email" required placeholder="Your Email" title="Please enter in a valid email address"></td></tr>
         <tr>
-        <td><label for="phone">Phone: </label></td><td><input type="tel" name="phone" id="phone" required placeholder="Your phone number" pattern="[0-9]{10}" title="Please enter a valid phone number: ##########"></td></tr>
+        <td><label>Phone: </label></td><td><input type="tel" name="phone" id="phone" required placeholder="Your phone number" pattern="[0-9]{10}" title="Please enter a valid phone number: ##########"></td></tr>
         </table>
 
     <br>
-    <fieldset>
-        <legend>Booking Details: </legend>
+        <fieldset>
+            <legend>Booking Details: </legend>
 
-        <table>
+            <table>
+                <tr>
+            <td><label>Booking in: </label></td><td><input id="dateIn" name="dateIn" required placeholder="yyyy/mm/dd"></td>
+            <td><label>Booking out: </label></td><td><input id="dateOut" name="dateOut" required placeholder="yyyy/mm/dd"></td></tr>
             <tr>
-        <td><label for="date">Booking in: </label></td><td><input id="date" type="date" name="date" min="2013-12-02"></td>
-        <td><label for="date">Booking out: </label></td><td><input id="date" type="date" name="date" min="2013-12-02"></td></tr>
-        <tr>
-        <td><label for="rooms">Rooms: &nbsp;&nbsp;</label></td><td><input id="rooms" type="number" name="rooms" min="1" max="30"></td></tr>
-        <tr>
-        <td><label for="adults">Adults: 	&nbsp;&nbsp;&nbsp;</label></td><td><input id="adults" type="number" name="adults" min="1" max="30"></td></tr>
-        <tr>
-        <td><label for="children">Children: </label></td><td><input id="children" type="number" name="children" min="0" max="30"></td></tr>
-        </table>
-        <p>Do you require meals?</p>
-        <label for="yesMeals">Yes: </label><input id="yesMeals" type="radio" name="meals" value="yesMeals">
-        <label for="noMeals">No: </label><input id="noMeals" type="radio" name="meals" value="noMeals" checked>
-        <br>
-        <label for="balcony">Do you require a balcony?</label><input id="balcony" type ="checkbox" name="balcony" value="yes">
-        <br>
-        <input type="image" src="Submit-Button-PNG-Pic.png" alt="Submit" width="80px" height="30px">
-    </fieldset>
-
-            
+            <td><label>Rooms:</label></td><td><input id="rooms" type="number" name="rooms" min="1" max="30"></td></tr>
+            <tr>
+            <td><label>Adults:</label></td><td><input id="adults" type="number" name="adults" min="1" max="30"></td></tr>
+            <tr>
+            <td><label>Children: </label></td><td><input id="children" type="number" name="children" min="0" max="30"></td></tr>
+            </table>
+            <p>Do you require meals?</p>
+            <label>Yes: </label><input id="meals" type="radio" name="meals" value="1">
+            <label>No: </label><input id="meals" type="radio" name="meals" value="0" checked>
+            <br>
+            <label>Do you require a balcony?</label><input id="balcony" type ="checkbox" name="balcony" value="1">
+            <br>
+            <input type="image" src="Submit-Button-PNG-Pic.png" alt="Submit" width="80px" height="30px">
+        </fieldset>          
     </fieldset>
 </form>
-
 </body>
+
+<script>
+    $( "#dateOut" ).datepicker({
+    dateFormat: 'yy-mm-dd', 
+    minDate: new Date()
+});
+
+$( "#dateIn" ).datepicker({
+    dateFormat: 'yy-mm-dd', 
+    minDate: new Date(),
+    onSelect: function(dateText, inst) {
+        var selectedDate = $( this ).datepicker( "getDate" );
+        $( "#dateOut" ).datepicker( "option", "minDate", selectedDate );
+    }
+});
+
+</script>
 </html>
