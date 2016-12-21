@@ -1,0 +1,59 @@
+This README file will explain every file that make up the website.
+------------------------------------------------------------------
+                           Files:
+
+1- homepage.html
+2- location.html
+3- formpage.html
+4- register.php
+5- init.php
+6- precheckout.html
+7- checkout.html
+8- checkout.php
+9- deleteguest.php
+------------------------------------------------------------------
+
+                      Explanation of files:
+
+1- homepage.html: This is the homepage, it has links to photos,
+   rooms (displaying 3 types), location which displays the location
+   of the hotel, check in, check out, contact, about, and home if a 
+   user wishes to go back to the homepage.
+
+2- location.html: Displays the location of the hotel via Google Maps.
+
+3- formpage.html: This file has the personal details and booking
+   details. The personal details consist of first name, last name
+   ID, email, and phone number.
+
+   The first and last name must have at least 3 letters. The ID
+   consists of numbers from 0 to 9 and should be 2 digits long.
+   The phone number must have 10 digits. We chose a maximum number
+   of rooms of 30. When the customer is done entering data and clicks
+   on submit, the data is sent to register.php.
+
+4- register.php requires(calls) init.php, which establishes a connec-
+   tion with the database. Then it stores the first name, last name,
+   ID, email, and phone number into variables. Then there's a query
+   to select the next guest ID, and a query is executed to store 
+   the first name, last name, ID, email, phone number, and guest ID
+   into the database. Also there's a variable to store the book in
+   date, book out date, number of rooms, number of adults, number
+   of children, meals choice, and balcony choice.
+
+5- init.php: Establishes a connection to the database.
+
+6- precheckout.html: Asks the user for their first name and last name,
+   the data is sent to checkout.php.
+
+7- checkout.html: This is the check out form.
+   It requires the first name, last name, and phone number to
+   check out. When the user submits, the data is sent to checkout.php.
+
+8- checkout.php: This is the payment form. It requires payment 
+   by credit card asking for the card type, name on card, card number,
+   check out date, and security code of the card. When the user submits
+   the information, the data is sent to deleteguest.php.
+
+9- deleteguest.php: The information related to the guest is deleted from
+   the database.
