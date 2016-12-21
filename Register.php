@@ -51,11 +51,7 @@
     }
     else{
         echo "Failed to register...";
-<<<<<<< HEAD
         header("Location: http://localhost/Development-of-web-Applications/FormPage.html");
-=======
-        //header("Location: http://localhost/Development-of-web-Applications/FormPage.html");
->>>>>>> origin/master
     }
 
 
